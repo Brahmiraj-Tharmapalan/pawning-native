@@ -22,8 +22,8 @@ import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertTriangle } from "lucide-react-native";
-import { useRouter } from "@unitools/router";
 import { AuthLayout } from "./layout";
+import { Link, useRouter } from "expo-router";
 
 const USERS = [
   {
@@ -204,6 +204,15 @@ const LoginWithLeftBackground = () => {
             <ButtonText className="font-medium">Log in</ButtonText>
           </Button>
         </VStack>
+
+        {/* sample dashboard button */}
+        <Button
+          onPress={() => {
+            router.push("/dashboard");
+          }}
+        >
+          <ButtonText>Dashboard</ButtonText>
+        </Button>
       </VStack>
     </VStack>
   );
